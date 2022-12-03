@@ -1,8 +1,17 @@
-const PokemonDesc = () => {
+const PokemonDesc = ({pokeDesc, pokeTypes}) => {
 
+    const type = pokeTypes.map((element, index) => {
+        return <li key={index}>{element}</li>
+    })
 
     return(
-        <h3>I am the description</h3>
+        <div className="bio">
+            <h3>{pokeDesc}</h3>
+            <ul>
+                {type}
+            </ul>
+        </div>
+
     )
 }
 

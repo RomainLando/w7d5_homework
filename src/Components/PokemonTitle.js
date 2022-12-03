@@ -1,8 +1,8 @@
-const PokemonTitle = () => {
+const PokemonTitle = ({pokeName, pokemonID}) => {
 
 
     return(
-        <h2>I am the pokemon title</h2>
+        <h2>#{pokemonID} {pokeName}</h2>
     )
 }
 

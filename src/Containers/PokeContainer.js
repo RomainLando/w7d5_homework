@@ -10,11 +10,8 @@ import PokemonDesc from "../Components/PokemonDesc";
 
 const  PokeContainer = () => {
 
-    const [isPokedex, setIsPokedex] = useState(true);
     const [pokemonList, setPokemonList] = useState("");
-    const [pokemonID, setPokemonID] = useState(1);
-    const [pokemon, setPokemon] = useState("");
-    const [species, setSpecies] = useState("");
+    const [pokemonID, setPokemonID] = useState(105);
     const [pokePic, setPokePic] = useState("");
     const [pokeName, setPokeName] = useState("");
     const [pokeTypes, setPokeTypes] = useState([]);
@@ -23,7 +20,7 @@ const  PokeContainer = () => {
 
 
     useEffect(() => {
-        getAllPokemon(pokemonID);
+        getAllPokemon();
     }, [])
 
 
