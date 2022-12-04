@@ -5,13 +5,13 @@ const SelectContainer = ({pokemonList, handleSelected, pokemonID, handlebuttonCl
     }) : null;
 
     const handlePrev = () => {
-        if (pokemonID>1) {
+        if (+pokemonID>+generation.start+1) {
             handlebuttonClick(-1);
         }
     }
 
     const handleNext = () => {
-        if (pokemonID<905) {
+        if (+pokemonID<+generation.end+generation.start) {
             handlebuttonClick(+1);
         }
     }
