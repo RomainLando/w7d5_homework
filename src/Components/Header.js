@@ -1,8 +1,12 @@
-const Header = () => {
+const Header = ({pokedexMode, handleModeSwitch}) => {
 
 
     return(
-        <h1>Pokedex</h1>
+        <div className="header">
+            {pokedexMode ? <h1>Pokedex</h1> : <h1>Poke-Guess</h1>}
+            <button onClick={handleModeSwitch}>Switch Modes</button>
+        </div>
+        
     )
 }
 

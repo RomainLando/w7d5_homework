@@ -1,8 +1,10 @@
-const GuessContainer = () => {
+const GuessContainer = ({guess, handleInput}) => {
 
 
     return(
-        <h2>I am the guess container</h2>
+        <div className="guess-container">
+            <input type="text" value={guess} onChange={handleInput}></input>
+        </div>
     )
 }
 

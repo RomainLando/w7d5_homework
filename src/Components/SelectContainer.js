@@ -17,13 +17,13 @@ const SelectContainer = ({pokemonList, handleSelected, pokemonID, handlebuttonCl
     }
 
     return(
-        <>
+        <div className="select-container">
         <button onClick={handlePrev}>Prev</button>
         <select id="myselectbox" value={pokemonID} onChange={handleSelected}>
             {pokemonOptions}
         </select>
         <button onClick={handleNext}>Next</button>
-        </>
+        </div>
         
 
     )

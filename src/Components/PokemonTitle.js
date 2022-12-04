@@ -1,8 +1,10 @@
-const PokemonTitle = ({pokeName, pokemonID}) => {
+const PokemonTitle = ({pokeName, pokemonID, pokedexMode}) => {
 
 
     return(
-        <h2>#{pokemonID} {pokeName}</h2>
+        <>
+        {pokedexMode ? <h2>#{pokemonID} {pokeName}</h2> : <h2>????????????</h2>}
+        </>  
     )
 }
 

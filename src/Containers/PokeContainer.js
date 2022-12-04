@@ -20,15 +20,17 @@ const  PokeContainer = () => {
         {name:"Gen VI", start:649, end:72},
         {name:"Gen VII", start:721, end:88},
         {name:"Gen VIII", start:809, end:96},
-        {name:"All", start:0, end:904},
+        {name:"All", start:0, end:905},
     ]);
+    const [pokedexMode, setPokedexMode] = useState(false);
     const [pokemonList, setPokemonList] = useState("");
     const [pokemonID, setPokemonID] = useState(1);
     const [pokePic, setPokePic] = useState("");
     const [pokeName, setPokeName] = useState("");
     const [pokeTypes, setPokeTypes] = useState([]);
     const [pokeDesc, setPokeDesc] = useState("");
-    const [generation, setGeneration] = useState({name:"All", start:0, end:904},)
+    const [generation, setGeneration] = useState({name:"All", start:0, end:905},)
+    const [guess, setGuess] = useState("");
 
 
     useEffect(() => {
@@ -40,8 +42,19 @@ const  PokeContainer = () => {
         getPokemon(pokemonID);
         getSpecies(pokemonID);
         const select_box = document.getElementById("myselectbox");
+        if (select_box) {
         select_box.selectedIndex = pokemonID;
+        }
+        
     }, [pokemonID])
+
+    useEffect(() => {
+        if (guess === pokeName) {
+            const num = Math.floor((Math.random() * generation.end)+generation.start+1);
+            setPokemonID(num);
+            setGuess("");
+        }
+    }, [guess])
 
 
     const getAllPokemon = () => {
@@ -96,24 +109,40 @@ const  PokeContainer = () => {
         
     }
 
+    const handleModeSwitch = () => {
+        if (pokedexMode) {
+            setPokedexMode(false);
+        } else {
+            setPokedexMode(true);
+        }
+    }
+
+    const handleInput = (evt) => {
+        setGuess(evt.target.value);
+    }
+
+
 
     return(
         <div className="pokemon-container">
-            <Header />
+            <Header pokedexMode={pokedexMode} handleModeSwitch={handleModeSwitch}/>
             <FilterContainer generations={generations} filterChange={filterChange}/>
             <div className="pokemon">
                 <PokemonImage pokePic={pokePic}/>
                 <div className="description">
-                    <PokemonTitle pokeName={pokeName} pokemonID={pokemonID}/>
+                    <PokemonTitle pokeName={pokeName} pokemonID={pokemonID} pokedexMode={pokedexMode}/>
                     <PokemonDesc pokeDesc={pokeDesc} pokeTypes={pokeTypes} />
                 </div>
             </div>
+            { pokedexMode ?
             <SelectContainer pokemonList={pokemonList}
             generation={generation}
             handleSelected={handleSelected}
             handlebuttonClick={handlebuttonClick}
-            pokemonID={pokemonID}/>
-            <GuessContainer />
+            pokemonID={pokemonID}/> :
+            <GuessContainer guess={guess}
+            handleInput={handleInput}/>
+            }
         </div>
         
     );
