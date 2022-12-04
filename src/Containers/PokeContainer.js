@@ -50,8 +50,7 @@ const  PokeContainer = () => {
 
     useEffect(() => {
         if (guess === pokeName) {
-            const num = Math.floor((Math.random() * generation.end)+generation.start+1);
-            setPokemonID(num);
+            randomID();
             setGuess("");
         }
     }, [guess])
@@ -121,6 +120,15 @@ const  PokeContainer = () => {
         setGuess(evt.target.value);
     }
 
+    const randomID = () => {
+        const num = Math.floor((Math.random() * (generation.end))+generation.start+1);
+        setPokemonID(num);
+    }
+
+
+    const handleSkip = () => {
+        randomID();
+    }
 
 
     return(
@@ -141,7 +149,8 @@ const  PokeContainer = () => {
             handlebuttonClick={handlebuttonClick}
             pokemonID={pokemonID}/> :
             <GuessContainer guess={guess}
-            handleInput={handleInput}/>
+            handleInput={handleInput}
+            handleSkip={handleSkip}/>
             }
         </div>
         
