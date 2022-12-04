@@ -2,7 +2,7 @@ const Header = () => {
 
 
     return(
-        <h1>I am the title</h1>
+        <h1>Pokedex</h1>
     )
 }
 

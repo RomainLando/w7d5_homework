@@ -1,7 +1,7 @@
-const FilterOption = () => {
+const FilterOption = ({generation, id, filterChange}) => {
 
     return(
-        <h3>I am a filter option</h3>
+        <button id={id} onClick={filterChange}>{generation}</button>
     )
 }
 
