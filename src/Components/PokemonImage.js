@@ -1,10 +1,13 @@
-const PokemonImage = ({pokePic}) => {
+import "./PokemonImage.css";
+
+const PokemonImage = ({pokePic, pokedexMode}) => {
 
     
-    
-
     return(
-        <img src={pokePic}></img>
+        <>
+        {pokedexMode ? <img src={pokePic}></img> : <img className="guess" src={pokePic}></img>}
+        </>
+        
     )
 }
 

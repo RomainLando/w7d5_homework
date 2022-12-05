@@ -1,3 +1,5 @@
+import "./GuessContainer.css"
+
 const GuessContainer = ({guess, handleInput, handleSkip}) => {
 
 

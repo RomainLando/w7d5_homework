@@ -1,4 +1,5 @@
 import FilterOption from "./FilterOption";
+import "./FilterContainer.css";
 
 const FilterContainer = ({generations, filterChange}) => {
 

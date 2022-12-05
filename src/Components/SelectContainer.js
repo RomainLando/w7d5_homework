@@ -1,3 +1,5 @@
+import "./SelectContainer.css";
+
 const SelectContainer = ({pokemonList, handleSelected, pokemonID, handlebuttonClick, generation}) => {
 
     const pokemonOptions = (pokemonList) ? pokemonList.map((element, index) => {

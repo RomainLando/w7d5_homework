@@ -6,6 +6,7 @@ import SelectContainer from "../Components/SelectContainer";
 import GuessContainer from "../Components/GuessContainer";
 import { useEffect, useState } from "react";
 import PokemonDesc from "../Components/PokemonDesc";
+import "./PokeContainer.css";
 
 
 const  PokeContainer = () => {
@@ -22,7 +23,7 @@ const  PokeContainer = () => {
         {name:"Gen VIII", start:809, end:96},
         {name:"All", start:0, end:905},
     ]);
-    const [pokedexMode, setPokedexMode] = useState(false);
+    const [pokedexMode, setPokedexMode] = useState(true);
     const [pokemonList, setPokemonList] = useState("");
     const [pokemonID, setPokemonID] = useState(1);
     const [pokePic, setPokePic] = useState("");
@@ -136,7 +137,7 @@ const  PokeContainer = () => {
             <Header pokedexMode={pokedexMode} handleModeSwitch={handleModeSwitch}/>
             <FilterContainer generations={generations} filterChange={filterChange}/>
             <div className="pokemon">
-                <PokemonImage pokePic={pokePic}/>
+                <PokemonImage pokePic={pokePic} pokedexMode={pokedexMode}/>
                 <div className="description">
                     <PokemonTitle pokeName={pokeName} pokemonID={pokemonID} pokedexMode={pokedexMode}/>
                     <PokemonDesc pokeDesc={pokeDesc} pokeTypes={pokeTypes} />

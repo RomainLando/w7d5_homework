@@ -1,3 +1,5 @@
+import "./PokemonDesc.css";
+
 const PokemonDesc = ({pokeDesc, pokeTypes}) => {
 
     const type = pokeTypes.map((element, index) => {

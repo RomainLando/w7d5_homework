@@ -1,0 +1,18 @@
+.description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.bio > ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+
+}
+
+.bio > ul > li {
+    list-style: none;
+}
