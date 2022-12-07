@@ -27,7 +27,7 @@ const  PokeContainer = () => {
     const [pokemonList, setPokemonList] = useState("");
     const [pokemonID, setPokemonID] = useState(1);
     const [pokePic, setPokePic] = useState("");
-    const [pokeName, setPokeName] = useState("");
+    const [pokeName, setPokeName] = useState(null);
     const [pokeTypes, setPokeTypes] = useState([]);
     const [pokeDesc, setPokeDesc] = useState("");
     const [generation, setGeneration] = useState({name:"All", start:0, end:905},)
@@ -35,13 +35,17 @@ const  PokeContainer = () => {
 
 
     useEffect(() => {
+        console.log("pokemon ID is: " + pokemonID)
         getAllPokemon();
+        console.log("pokemon ID is: " + pokemonID)
     }, [generation])
 
 
     useEffect(() => {
         getPokemon(pokemonID);
+        console.log("pokemon ID is: " + pokemonID)
         getSpecies(pokemonID);
+        console.log("pokemon ID is: " + pokemonID)
         const select_box = document.getElementById("myselectbox");
         if (select_box) {
         select_box.selectedIndex = pokemonID;
@@ -129,6 +133,8 @@ const  PokeContainer = () => {
 
     const handleSkip = () => {
         randomID();
+        const guessInput = document.getElementById("guess-input");
+        guessInput.innerText = "";
     }
 
 
