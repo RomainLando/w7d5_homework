@@ -35,17 +35,13 @@ const  PokeContainer = () => {
 
 
     useEffect(() => {
-        console.log("pokemon ID is: " + pokemonID)
         getAllPokemon();
-        console.log("pokemon ID is: " + pokemonID)
     }, [generation])
 
 
     useEffect(() => {
         getPokemon(pokemonID);
-        console.log("pokemon ID is: " + pokemonID)
         getSpecies(pokemonID);
-        console.log("pokemon ID is: " + pokemonID)
         const select_box = document.getElementById("myselectbox");
         if (select_box) {
         select_box.selectedIndex = pokemonID;
