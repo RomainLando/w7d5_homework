@@ -87,7 +87,10 @@ const  PokeContainer = () => {
         fetch("https://pokeapi.co/api/v2/pokemon-species/"+id+"/")
         .then((response) => response.json())
         .then((data) => {
-            setPokeDesc(data.flavor_text_entries[0].flavor_text)
+            const desc = (data.flavor_text_entries.find((element) => {
+                return element.language.name == "en";
+            }))
+            setPokeDesc(desc.flavor_text);
         })
     }
 
