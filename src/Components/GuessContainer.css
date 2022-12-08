@@ -3,7 +3,8 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 10px
+    gap: 10px;
+    margin-bottom: 1em;
 }
 
 .guess-container > input {
