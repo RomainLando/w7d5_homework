@@ -1,3 +1,8 @@
+img {
+    height: 40vw;
+    width: auto;
+}
+
 .guess {
     filter: contrast(0) brightness(0);
 }

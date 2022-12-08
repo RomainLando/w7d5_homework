@@ -1,4 +1,24 @@
 .filters {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    margin: 10px 20px;
+}
+
+.filters > button {
+    font-family: 'Roboto Slab', serif;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    font-size: 1em;
+    background-color: #FFCB05;
+    border: 2px #3D7DCA solid;
+    border-radius: 7px;
+    color: #003A70;
+    padding: 3px 6px
+}
+
+.filters > button:focus {
+    background-color: #b0900e;
+    border: 2px #2669ba solid;
+    color: #003A70;
 }

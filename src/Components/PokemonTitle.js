@@ -1,3 +1,5 @@
+import './PokemonTitle.css';
+
 const PokemonTitle = ({pokeName, pokemonID, pokedexMode}) => {
 
 

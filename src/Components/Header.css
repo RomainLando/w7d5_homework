@@ -3,5 +3,27 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+    flex-wrap: nowrap;
     
+}
+
+.header > h1 {
+    font-size: 3em;
+    color: #003A70;
+}
+
+.header > button {
+    font-family: 'Roboto Slab', serif;
+    font-size: 1em;
+    background-color: #FFCB05;
+    border: 2px #3D7DCA solid;
+    border-radius: 7px;
+    color: #003A70;
+    padding: 3px 8px
+}
+
+.header > button:hover{
+    background-color: #b0900e;
+    border: 2px #2669ba solid;
+    color: #003A70;
 }

@@ -1,4 +1,33 @@
+
 .guess-container {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px
+}
+
+.guess-container > input {
+    border: 2px #3D7DCA solid;
+    border-radius: 7px;
+    background-color: #ffcd05d0;
+    padding: 3px 6px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 1em;
+    color: #003A70;
+}
+
+.guess-container > button {
+    font-family: 'Roboto Slab', serif;
+    font-size: 1em;
+    background-color: #FFCB05;
+    border: 2px #3D7DCA solid;
+    border-radius: 7px;
+    color: #003A70;
+    padding: 3px 8px
+}
+
+.guess-container > button:hover {
+    background-color: #b0900e;
+    border: 2px #2669ba solid;
+    color: #003A70;
 }
